@@ -1,36 +1,36 @@
-;;; doom-benmtz-theme.el --- Benmtz dark theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-base16-theme.el --- Base16 dark theme -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;; Variables
-(defgroup doom-benmtz-theme nil
-  "Options for the `doom-benmtz' theme."
+(defgroup doom-base16-theme nil
+  "Options for the `doom-base16' theme."
   :group 'doom-themes)
 
-(defcustom doom-benmtz-brighter-modeline nil
+(defcustom doom-base16-brighter-modeline nil
   "If non-nil, more vivid colors will be used to style the mode-line."
-  :group 'doom-benmtz-theme
+  :group 'doom-base16-theme
   :type 'boolean)
 
-(defcustom doom-benmtz-brighter-comments nil
+(defcustom doom-base16-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
-  :group 'doom-benmtz-theme
+  :group 'doom-base16-theme
   :type 'boolean)
 
-(defcustom doom-benmtz-comment-bg doom-benmtz-brighter-comments
+(defcustom doom-base16-comment-bg doom-base16-brighter-comments
   "If non-nil, comments will have a subtle, darker background. Enhancing their
 legibility."
-  :group 'doom-benmtz-theme
+  :group 'doom-base16-theme
   :type 'boolean)
 
-(defcustom doom-benmtz-padded-modeline doom-themes-padded-modeline
+(defcustom doom-base16-padded-modeline doom-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
-  :group 'doom-benmtz-theme
+  :group 'doom-base16-theme
   :type '(or integer boolean))
 
 ;;; Theme definition
-(def-doom-theme doom-benmtz
-  "A dark theme inspired by Acario"
+(def-doom-theme doom-base16
+  "A base16 theme"
 
   ;; name        default   256         16
   ((bg         '("#{{ base00-hex }}" "color-233" "black"        ))
@@ -70,8 +70,8 @@ determine the exact padding."
    (vertical-bar   base0)
    (selection      bg-blue)
    (builtin        blue)
-   (comments       (if doom-benmtz-brighter-comments bg-cyan grey))
-   (doc-comments   (doom-lighten (if doom-benmtz-brighter-comments bg-cyan green) 0.25))
+   (comments       (if doom-base16-brighter-comments bg-cyan grey))
+   (doc-comments   (doom-lighten (if doom-base16-brighter-comments bg-cyan green) 0.25))
    (constants      magenta)
    (functions      yellow)
    (keywords       red)
@@ -91,10 +91,10 @@ determine the exact padding."
 
    ;; custom categories
    (hidden bg)
-   (-modeline-bright doom-benmtz-brighter-modeline)
+   (-modeline-bright doom-base16-brighter-modeline)
    (-modeline-pad
-    (when doom-benmtz-padded-modeline
-      (if (integerp doom-benmtz-padded-modeline) doom-benmtz-padded-modeline 4)))
+    (when doom-base16-padded-modeline
+      (if (integerp doom-base16-padded-modeline) doom-base16-padded-modeline 4)))
 
    (modeline-fg     nil)
    (modeline-fg-alt base7)
@@ -115,7 +115,7 @@ determine the exact padding."
   ((font-lock-comment-face
     :slant 'italic
     :foreground comments
-    :background (if doom-benmtz-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-base16-comment-bg (doom-lighten bg 0.05)))
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
@@ -249,4 +249,4 @@ determine the exact padding."
   ;; ()
   )
 
-;;; doom-benmtz-theme.el ends here
+;;; doom-base16-theme.el ends here
