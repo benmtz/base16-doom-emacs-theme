@@ -1,0 +1,3 @@
+doom-emacs:
+  extension: .el
+  output: doom-emacs
